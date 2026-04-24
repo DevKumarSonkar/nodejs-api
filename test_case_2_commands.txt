@@ -1,0 +1,38 @@
+Test Case 2 — File Permission Configuration
+
+1. Navigate to home directory and create index.html:
+cd ~
+touch index.html
+
+2. Add HTML text content:
+echo "<html><body><h1>My name is Dev Sonkar</h1></body></html>" > index.html
+
+3. Check default permissions:
+ls -l index.html
+
+4. Grant full permissions (read, write, execute) to all users:
+chmod 777 index.html
+
+5. Change file owner and group to www-data:
+sudo chown www-data:www-data index.html
+
+6. Change file permissions to 755:
+sudo chmod 755 index.html
+
+7. Display final permissions and ownership:
+ls -l index.html
+
+OUTPUT in Terminal:
+
+dev@pop-os:~$ touch index.html
+dev@pop-os:~$ echo "<html><body><h1>My name is Dev Sonkar</h1></body></html>" > index.html
+dev@pop-os:~$ ls -l index.html
+-rw-rw-r-- 1 dev dev 57 Apr 24 10:12 index.html
+dev@pop-os:~$ chmod 777 index.html
+dev@pop-os:~$ sudo chown www-data:www-data index.html
+[sudo] password for dev: 
+dev@pop-os:~$ sudo chmod 755 index.html
+dev@pop-os:~$ ls -l index.html
+-rwxr-xr-x 1 www-data www-data 57 Apr 24 10:12 index.html
+dev@pop-os:~$ 
+
